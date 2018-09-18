@@ -3,6 +3,7 @@ package main
 import (
 	"math/rand"
 	"net/http"
+	"os"
 	"time"
 
 	log "github.com/sirupsen/logrus"
@@ -49,5 +50,11 @@ func main() {
 		w.Write([]byte(catFact))
 	})
 
-	http.ListenAndServe(":8080", nil)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	port = ":" + port
+
+	http.ListenAndServe(port, nil)
 }
