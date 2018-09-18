@@ -56,5 +56,6 @@ func main() {
 	}
 	port = ":" + port
 
+	log.Infof("Binding to port: %s", port)
 	http.ListenAndServe(port, nil)
 }
