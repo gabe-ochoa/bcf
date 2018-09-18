@@ -24,6 +24,10 @@
 #   go-tests = true
 #   unused-packages = true
 
+[metadata.heroku]
+  root-package = "github.com/gabe-ochoa/bcf"
+  go-version = "1.10"
+  install = [ "./..." ]
 
 [prune]
   go-tests = true
